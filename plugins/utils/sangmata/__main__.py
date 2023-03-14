@@ -45,7 +45,7 @@ async def sangmata_(message: Message):
             msgs.append(await conv.get_response(timeout=3, mark_read=True))
     except StopConversation:
         pass
-    nama = "History for"
+    nama = "**History for**"
     for msg in msgs:
         if '-u' in message.flags:
             if msg.text.startswith("No data available"):
