@@ -45,11 +45,10 @@ async def sangmata_(message: Message):
             msgs.append(await conv.get_response(timeout=3, mark_read=True))
     except StopConversation:
         pass
-    nama = "**History for**"
     for msg in msgs:
         if '-u' in message.flags:
             if msg.text.startswith("No data available"):
                 await message.edit("```\nUser never changed his Username...```", del_in=5)
                 return
-            if msg.text.startswith(nama):
+            if msg.text.startswith("History":
                 await message.edit(f"`{msg.text}`")
