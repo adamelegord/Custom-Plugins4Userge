@@ -55,8 +55,8 @@ async def sangmata_(message: Message):
             if msg.text.startswith(username):
                 await message.edit(f"`{msg.text}`")
         else:
-            if msg.text.startswith("No records found"):
-                await message.edit("```\nUser never changed his Name...```", del_in=5)
+            if msg.text.startswith("No data available"):
+                await message.edit("```\nbeliau nggak pernah ganti nama/username...```", del_in=5)
                 return
             if msg.text.startswith(name):
                 await message.edit(f"`{msg.text}`")
