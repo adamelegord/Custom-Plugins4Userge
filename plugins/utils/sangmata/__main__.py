@@ -30,7 +30,7 @@ async def sangmata_(message: Message):
         return
     user = replied.from_user.id
     chat = "@SangMata_bot"
-    await message.edit("```\nGetting info, Wait plox ...```")
+    await message.edit("```\nMendapatkan Info Tunggu Sebentar...```")
     msgs = []
     ERROR_MSG = "For your kind information, you blocked @Sangmatainfo_bot, Unblock it"
     try:
@@ -45,18 +45,11 @@ async def sangmata_(message: Message):
             msgs.append(await conv.get_response(timeout=3, mark_read=True))
     except StopConversation:
         pass
-    name = "Name History"
-    username = "Username History"
+    nama = "History for"
     for msg in msgs:
         if '-u' in message.flags:
-            if msg.text.startswith("No records found"):
+            if msg.text.startswith("No data available"):
                 await message.edit("```\nUser never changed his Username...```", del_in=5)
                 return
-            if msg.text.startswith(username):
-                await message.edit(f"`{msg.text}`")
-        else:
-            if msg.text.startswith("No records found"):
-                await message.edit("```\nUser never changed his Name...```", del_in=5)
-                return
-            if msg.text.startswith(name):
+            if msg.text.startswith(nama):
                 await message.edit(f"`{msg.text}`")
