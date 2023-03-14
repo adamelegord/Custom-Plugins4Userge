@@ -29,10 +29,10 @@ async def sangmata_(message: Message):
         await message.err("```\nReply to get Name and Username History...```", del_in=5)
         return
     user = replied.from_user.id
-    chat = "@Sangmatainfo_bot"
-    await message.edit("```\nGetting info, Wait plox ...```")
+    chat = "@SangMata_BOT"
+    await message.edit("```\nMendapatkan info tunggu sebentar ...```")
     msgs = []
-    ERROR_MSG = "For your kind information, you blocked @Sangmatainfo_bot, Unblock it"
+    ERROR_MSG = "For your kind information, you blocked @SangMata_BOT, Unblock it"
     try:
         async with userge.conversation(chat) as conv:
             try:
@@ -45,7 +45,7 @@ async def sangmata_(message: Message):
             msgs.append(await conv.get_response(timeout=3, mark_read=True))
     except StopConversation:
         pass
-    name = "Name History"
+    name = "History for"
     username = "Username History"
     for msg in msgs:
         if '-u' in message.flags:
